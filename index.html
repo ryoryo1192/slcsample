@@ -1,0 +1,51 @@
+<!doctype HTML>
+<html>
+<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-assets>
+	    <video id="1navy" autoplay loop="true" muted="true" src="1navy.mp4"></video>
+	  </a-assets>
+    <a-assets>
+	    <video id="2navy" autoplay loop="true" muted="true" src="2navy.mp4"></video>
+	  </a-assets>
+    <a-assets>
+	    <img id="3navy" src="3navy.png"></img>
+	  </a-assets>
+	  <!-- デバッグ用の画面表示、VR用のボタンをそれぞれ非表示に -->
+    <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
+      <!-- 今回作成した『.patt』ファイルを読み込む -->
+      <a-marker type='pattern' url='1navy.patt'>
+	      <a-video src="#1navy" width="2.6" height="1.4" position="0 0 0" rotation="270 0 0" play="true"></a-video>
+      </a-marker>
+      <a-entity camera></a-entity>
+      <a-marker type='pattern' url='2navy.patt'>
+	      <a-video src="#2navy" width="2.6" height="1.4" position="0 0 0" rotation="270 0 0" play="true"></a-video>
+      </a-marker>
+      <a-entity camera></a-entity>
+      <a-marker type='pattern' url='3navy.patt'>
+	     <a-image id="3navy" src="#3navy" scale="1 1 1" position="0 0 0" rotation="-90 0 0"></a-image>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+    
+    <script>
+      window.addEventListener('markerFound', function () {
+      var v = document.querySelector('#1navy');
+      v.play();
+      });
+    </script> 
+    <script>
+      window.addEventListener('markerFound', function () {
+      var v = document.querySelector('#2navy');
+      v.play();
+      });
+    </script>
+    <script>
+      window.addEventListener('markerFound', function () {
+      var v = document.querySelector('#3navy');
+      v.play();
+      });
+    </script> 
+  </body>
+</html>
