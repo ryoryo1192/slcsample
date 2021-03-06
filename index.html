@@ -30,6 +30,9 @@
     <a-assets>
 	    <video id="red4" autoplay loop="true" muted="true" src="4red.mp4"></video>
 	  </a-assets>
+　　 <a-assets>
+	    <video id="red5" autoplay loop="true" muted="true" src="5red.mp4"></video>
+	  </a-assets>
 	  <!-- デバッグ用の画面表示、VR用のボタンをそれぞれ非表示に -->
     <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
       <!-- 今回作成した『.patt』ファイルを読み込む -->
@@ -67,6 +70,10 @@
       <a-entity camera></a-entity>
       <a-marker type='pattern' url='4red.patt'>
 	      <a-video src="#red4" width="2.6" height="1.4" position="0 0 0" rotation="270 0 0" play="true"></a-video>
+      </a-marker>
+      <a-entity camera></a-entity>
+      <a-marker type='pattern' url='5red.patt'>
+	      <a-video src="#red5" width="2.6" height="1.4" position="0 0 0" rotation="270 0 0" play="true"></a-video>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
@@ -125,5 +132,11 @@
       v.play();
       });
     </script> 
+    <script>
+      window.addEventListener('markerFound', function () {
+      var v = document.querySelector('#red5');
+      v.play();
+      });
+    </script>
   </body>
 </html>
