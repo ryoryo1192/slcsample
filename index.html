@@ -18,9 +18,6 @@
 　　<a-assets>
 	    <img id="navy5" src="5navy.png"></img>
 	  </a-assets>
-    <a-assets>
-	    <img id="navy6" src="6navy.jpg"></img>
-	  </a-assets>
 	  <!-- デバッグ用の画面表示、VR用のボタンをそれぞれ非表示に -->
     <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
       <!-- 今回作成した『.patt』ファイルを読み込む -->
@@ -42,10 +39,6 @@
       <a-entity camera></a-entity>
       <a-marker type='pattern' url='5navy.patt'>
 	     <a-image id="navy5" src="#navy5" scale="1.77 2.24 1" position="0 0 0" rotation="-90 0 0"></a-image>
-      </a-marker>
-      <a-entity camera></a-entity>
-      <a-marker type='pattern' url='6navy.patt'>
-	     <a-image id="navy6" src="#navy6" scale="1.92 0.99 1" position="0 0 0" rotation="-90 0 0"></a-image>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
@@ -80,11 +73,5 @@
       v.play();
       });
     </script> 
-    <script>
-      window.addEventListener('markerFound', function () {
-      var v = document.querySelector('#navy6');
-      v.play();
-      });
-    </script>
   </body>
 </html>
