@@ -22,6 +22,9 @@
 	    <img id="red1" src="1red.png"></img>
 	  </a-assets>
     <a-assets>
+	    <img id="red2" src="2red.jpg"></img>
+	  </a-assets>
+    <a-assets>
 	    <video id="red4" autoplay loop="true" muted="true" src="4red.mp4"></video>
 	  </a-assets>
 	  <!-- デバッグ用の画面表示、VR用のボタンをそれぞれ非表示に -->
@@ -49,6 +52,10 @@
       <a-entity camera></a-entity>
       <a-marker type='pattern' url='1red.patt'>
 	     <a-image id="red1" src="#red1" scale="2.13 1.42 1" position="0 0 0" rotation="-90 0 0"></a-image>
+      </a-marker>
+      <a-entity camera></a-entity>
+      <a-marker type='pattern' url='2red.patt'>
+	     <a-image id="red2" src="#red2" scale="2.13 1.86 1" position="0 0 0" rotation="-90 0 0"></a-image>
       </a-marker>
       <a-entity camera></a-entity>
       <a-marker type='pattern' url='4red.patt'>
@@ -93,6 +100,12 @@
       v.play();
       });
     </script> 
+    <script>
+      window.addEventListener('markerFound', function () {
+      var v = document.querySelector('#red2');
+      v.play();
+      });
+    </script>
      <script>
       window.addEventListener('markerFound', function () {
       var v = document.querySelector('#red4');
