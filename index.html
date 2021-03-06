@@ -16,6 +16,9 @@
 	    <img id="navy4" src="4navy.jpg"></img>
 	  </a-assets>
     <a-assets>
+	    <img id="navy6" src="6navy.jpg"></img>
+	  </a-assets>
+    <a-assets>
 	    <video id="red4" autoplay loop="true" muted="true" src="4red.mp4"></video>
 	  </a-assets>
 	  <!-- デバッグ用の画面表示、VR用のボタンをそれぞれ非表示に -->
@@ -35,6 +38,10 @@
       <a-entity camera></a-entity>
       <a-marker type='pattern' url='4navy.patt'>
 	     <a-image id="navy4" src="#navy4" scale="2.04 1.4 1" position="0 0 0" rotation="-90 0 0"></a-image>
+      </a-marker>
+      <a-entity camera></a-entity>
+      <a-marker type='pattern' url='6navy.patt'>
+	     <a-image id="navy6" src="#navy6" scale="2 1 1" position="0 0 0" rotation="-90 0 0"></a-image>
       </a-marker>
       <a-entity camera></a-entity>
       <a-marker type='pattern' url='4red.patt'>
@@ -64,6 +71,12 @@
     <script>
       window.addEventListener('markerFound', function () {
       var v = document.querySelector('#navy4');
+      v.play();
+      });
+    </script> 
+    <script>
+      window.addEventListener('markerFound', function () {
+      var v = document.querySelector('#navy6');
       v.play();
       });
     </script> 
