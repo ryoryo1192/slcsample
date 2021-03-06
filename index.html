@@ -12,8 +12,17 @@
     <a-assets>
 	    <img id="navy3" src="3navy.png"></img>
 	  </a-assets>
-     <a-assets>
+    <a-assets>
 	    <img id="navy4" src="4navy.jpg"></img>
+	  </a-assets>
+　　<a-assets>
+	    <img id="navy5" src="5navy.png"></img>
+	  </a-assets>
+    <a-assets>
+	    <img id="navy6" src="6navy.jpg"></img>
+	  </a-assets>
+    <a-assets>
+	    <img id="red1" src="1red.png"></img>
 	  </a-assets>
 	  <!-- デバッグ用の画面表示、VR用のボタンをそれぞれ非表示に -->
     <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
@@ -34,6 +43,19 @@
 	     <a-image id="navy4" src="#navy4" scale="2.04 1.4 1" position="0 0 0" rotation="-90 0 0"></a-image>
       </a-marker>
       <a-entity camera></a-entity>
+      <a-marker type='pattern' url='5navy.patt'>
+	     <a-image id="navy5" src="#navy5" scale="1.77 2.24 1" position="0 0 0" rotation="-90 0 0"></a-image>
+      </a-marker>
+      <a-entity camera></a-entity>
+      <a-marker type='pattern' url='6navy.patt'>
+	     <a-image id="navy6" src="#navy6" scale="1.92 0.99 1" position="0 0 0" rotation="-90 0 0"></a-image>
+      </a-marker>
+      <a-entity camera></a-entity>
+      <a-marker type='pattern' url='1red.patt'>
+	     <a-image id="red1" src="#red1" scale="2.13 1.41 1" position="0 0 0" rotation="-90 0 0"></a-image>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
     </a-scene>
     
     <script>
@@ -60,5 +82,23 @@
       v.play();
       });
     </script> 
+    <script>
+      window.addEventListener('markerFound', function () {
+      var v = document.querySelector('#navy5');
+      v.play();
+      });
+    </script> 
+    <script>
+      window.addEventListener('markerFound', function () {
+      var v = document.querySelector('#navy6');
+      v.play();
+      });
+    </script>
+    <script>
+      window.addEventListener('markerFound', function () {
+      var v = document.querySelector('#red1');
+      v.play();
+      });
+    </script>
   </body>
 </html>
